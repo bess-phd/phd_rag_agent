@@ -1,0 +1,2 @@
+Coverage does not apply to high-risk projects without approval.
+
