@@ -7,7 +7,15 @@ ENDPOINT = "https://phd-agent-ukef-resource.services.ai.azure.com/api/projects/p
 # Extract the model deployment name from the endpoint or set it explicitly
 MODEL_DEPLOYMENT_NAME = "gpt-4o-mini"  # Change this to your actual model deployment name (check Azure AI Foundry)
 
-case_data = "Kamil Changan Consultancy. UK-based. 7% export revenue. Project: South Sudan."
+case_data = """Kamil Changan Consultancy
+- Location: UK-based
+- Export History (last 3 financial years):
+  * Year 1 (2023-2024): 5% of annual turnover from exports
+  * Year 2 (2024-2025): 5% of annual turnover from exports
+  * Year 3 (2025-2026): 7% of annual turnover from exports
+- Proposed Project: Consultancy contract in South Sudan
+- Project Value: TBD
+- UK Content: TBD"""
 
 async def run_step(agent, instruction):
     """Run a single step with the agent."""

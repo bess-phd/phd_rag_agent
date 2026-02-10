@@ -1,0 +1,151 @@
+{
+  "policy_overview": {
+    "organization": "UK Export Finance (UKEF)",
+    "purpose": "Support UK exporters with financing guarantees and insurance",
+    "key_facilities": ["General Export Facility (GEF)", "Export Development Guarantee", "Political and Commercial Risk Insurance"]
+  },
+  "eligibility_rules": {
+    "5_percent_rule": {
+      "name": "Revenue Threshold (5% Rule)",
+      "description": "To be eligible for General Export Facility support, a business must show that in EACH of the last three (3) financial years, at least 5% of its annual turnover has been made up of export sales.",
+      "applicability": "General Export Facility (GEF)",
+      "enforcement": "Mandatory - must be met for all three years, not average",
+      "example": {
+        "company": "Kamil Changan Consultancy",
+        "year_1": {"label": "2023-2024", "export_percentage": 5.0, "meets_threshold": true},
+        "year_2": {"label": "2024-2025", "export_percentage": 5.0, "meets_threshold": true},
+        "year_3": {"label": "2025-2026", "export_percentage": 7.0, "meets_threshold": true},
+        "overall_status": "ELIGIBLE - meets 5% threshold in all three years"
+      }
+    },
+    "20_percent_rule": {
+      "name": "Export Intensity (20% Rule)",
+      "description": "For broader support (Export Development Guarantee), exporters usually need to show that export sales represent at least 20% of annual turnover in the last financial year, or on average over the last three years.",
+      "applicability": "Export Development Guarantee, Premium Support",
+      "threshold_type": "Either single year OR 3-year average",
+      "note": "Kamil Changan at 5-7% does NOT meet this threshold - requires manual review"
+    },
+    "uk_content_requirement": {
+      "name": "UK Content Requirement",
+      "description": "At least 20% of the specific contract value must be UK-sourced (goods or services).",
+      "applicability": "All facilities",
+      "verification": "Required in project documentation"
+    },
+    "minimum_contract_value": {
+      "name": "Minimum Contract Value",
+      "description": "Transactions should be a minimum of £5 million",
+      "sme_exception": "SMEs have access to smaller facilities via General Export Facility (up to £25m total)",
+      "note": "South Sudan contract value TBD"
+    }
+  },
+  "country_risk_assessment": {
+    "south_sudan": {
+      "political_risk": "HIGH",
+      "risk_level": "Off-Cover or Strictly Restricted",
+      "approval_requirement": "Case-by-case Principal-level review mandatory",
+      "macro_fiscal_status": "Under Public Finance Review (2026) due to macro-fiscal challenges",
+      "economic_dependency": "Heavy reliance on oil revenue - high vulnerability to commodity price fluctuations",
+      "required_assessments": [
+        "Robust Financing Structures - Is the project self-funding via foreign exchange?",
+        "OECD Sustainable Lending - Must align with sustainable debt principles for low-income countries",
+        "Political Risk Coverage - Specific political risk insurance may be required",
+        "Market Viability - Trade relationship with UK"
+      ],
+      "trade_stats": {
+        "uk_south_sudan_total_trade": "£33 million (late 2025)",
+        "trend": "Growing market, 22% increase recorded"
+      }
+    }
+  },
+  "assessment_framework": {
+    "eligibility_check": [
+      {
+        "criterion": "5% Export Threshold (last 3 years)",
+        "status": "PASS",
+        "for_company": "Kamil Changan",
+        "evidence": "5%, 5%, 7% in consecutive years"
+      },
+      {
+        "criterion": "20% Export Intensity",
+        "status": "FAIL",
+        "for_company": "Kamil Changan",
+        "note": "Does not meet 20% threshold - requires nuanced manual review"
+      },
+      {
+        "criterion": "Country Risk Assessment",
+        "status": "HIGH RISK",
+        "for_country": "South Sudan",
+        "action": "Principal-level review required"
+      },
+      {
+        "criterion": "UK Content Requirement",
+        "status": "TBD",
+        "note": "Project details needed"
+      }
+    ],
+    "decision_logic": {
+      "scenario": "7% exporter + South Sudan project",
+      "analysis": "Passes 5% GEF threshold but falls short of 20% standard exporter test",
+      "recommendation": "Requires case-by-case manual review considering:",
+      "factors": [
+        "South Sudan's high political risk profile",
+        "Company's proven export track record (5-7%)",
+        "Project financing structure (must be self-funding)",
+        "OECD sustainable lending alignment",
+        "UK content specifications",
+        "Total project value and contract structure"
+      ]
+    }
+  },
+  "academic_references": {
+    "sustainability_and_risk": [
+      {
+        "ref": "[11] Koomey (2011)",
+        "topic": "Operational efficiency and data energy calculations",
+        "journal": "Q1 Journal",
+        "relevance": "Energy cost assessment for projects"
+      },
+      {
+        "ref": "[17] Merz (2023)",
+        "topic": "Environmental and ecological indicator analysis",
+        "relevance": "Environmental impact assessment for country risk"
+      },
+      {
+        "ref": "[24] Rees (2023)",
+        "topic": "Environmental Policy Studies and regulatory alignment",
+        "relevance": "Sustainability compliance verification"
+      },
+      {
+        "ref": "[8] Jang (ICML 2025)",
+        "topic": "Machine learning applications in risk assessment",
+        "conference": "ICML 2025",
+        "relevance": "Data-driven country risk modeling"
+      }
+    ]
+  },
+  "decision_checklist": {
+    "step_1_eligibility": {
+      "question": "Does company meet 5% export threshold for all 3 years?",
+      "for_kamil": "YES - 5%, 5%, 7%"
+    },
+    "step_2_export_intensity": {
+      "question": "Does company meet 20% export intensity test?",
+      "for_kamil": "NO - 5-7% is below 20%",
+      "action": "Proceed to manual review"
+    },
+    "step_3_country_risk": {
+      "question": "Is South Sudan approved for standard UKEF support?",
+      "status": "OFF-COVER / RESTRICTED",
+      "action": "Principal-level review required"
+    },
+    "step_4_project_viability": {
+      "question": "Is project self-funding and OECD compliant?",
+      "status": "TBD",
+      "required_docs": ["Financing structure", "OECD assessment", "UK content breakdown"]
+    },
+    "final_recommendation": {
+      "status": "CONDITIONAL APPROVAL",
+      "condition": "Principal-level review with comprehensive risk mitigation plan"
+    }
+  }
+}
