@@ -1,6 +1,6 @@
 # UKEF Agent - Knowledge Base Setup Guide
 
-## 📋 Overview
+## Overview
 
 This folder contains a complete UKEF (UK Export Finance) policy analysis agent with comprehensive policy knowledge base and system instructions.
 
@@ -11,7 +11,7 @@ This folder contains a complete UKEF (UK Export Finance) policy analysis agent w
 - `SYSTEM_INSTRUCTIONS.md` - Agent system prompt and guidelines
 - `FIX_SUMMARY.md` - Technical documentation of API migration
 
-## 🎯 What This Agent Does
+## What This Agent Does
 
 The agent analyzes export financing eligibility for UK companies seeking UKEF support by:
 
@@ -29,17 +29,17 @@ The agent analyzes export financing eligibility for UK companies seeking UKEF su
   * Year 1 (2023-2024): 5% of annual turnover
   * Year 2 (2024-2025): 5% of annual turnover
   * Year 3 (2025-2026): 7% of annual turnover
-- Status: ✅ MEETS 5% Rule (lowest GEF threshold)
+- Status: MEETS 5% Rule (lowest GEF threshold)
 - Project: Consultancy in South Sudan
-- Country Risk: 🚫 HIGH (requires Principal-level review)
+- Country Risk: HIGH (requires Principal-level review)
 ```
 
 **Assessment Result:**
-- ✅ Eligible for General Export Facility (GEF)
-- ⚠️ NOT eligible for Export Development Guarantee (needs 20%)
-- 📋 CONDITIONAL: Requires case-by-case Principal review due to South Sudan risk
+- Eligible for General Export Facility (GEF)
+- NOT eligible for Export Development Guarantee (needs 20%)
+- CONDITIONAL: Requires case-by-case Principal review due to South Sudan risk
 
-## 🚀 How to Use in Azure AI Foundry
+## How to Use in Azure AI Foundry
 
 ### Option 1: Upload Knowledge Base (Recommended)
 
@@ -204,7 +204,7 @@ Edit `ukef_policy_knowledge.json` and add to appropriate section:
    → Should clarify 5-7% vs 20% requirement distinction
 ```
 
-## 🛠️ Technical Details
+## Technical Details
 
 **Agent Framework Used:** Microsoft Agent Framework (v1.0.0b260130)
 **Model:** gpt-4o-mini (deployment name)
@@ -218,14 +218,14 @@ Edit `ukef_policy_knowledge.json` and add to appropriate section:
 - [24] Rees (2023) - Environmental policy compliance
 - [8] Jang (ICML 2025) - ML-based risk assessment
 
-## ⚠️ Important Notes
+## Important Notes
 
 - **Export % must meet threshold in EACH year**, not average
 - **South Sudan is Off-Cover** - requires special approval
 - **Principal-level review** needed for companies <20% export intensity
 - **Documentation** of all assumptions required in final assessment
 
-## 🔐 Configuration Checklist
+## Configuration Checklist
 
 Before running:
 - [ ] Set `AGENT_ID` to your actual agent ID from Azure AI Foundry

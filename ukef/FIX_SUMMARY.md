@@ -71,11 +71,11 @@ MODEL_DEPLOYMENT_NAME = "phd_agent_ukef"  # Extracted from endpoint
    ```
 
 ## Key Improvements
-✅ Uses modern Microsoft Agent Framework (recommended approach)
-✅ Proper async/await handling
-✅ Better error messages and troubleshooting
-✅ Configuration validation
-✅ Cleaner, more maintainable code structure
+- Uses modern Microsoft Agent Framework (recommended approach)
+- Proper async/await handling
+- Better error messages and troubleshooting
+- Configuration validation
+- Cleaner, more maintainable code structure
 
 ## References
 - [Microsoft Agent Framework Documentation](https://github.com/microsoft/agent-framework)

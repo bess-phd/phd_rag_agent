@@ -24,13 +24,13 @@ async def ask_agent(agent, question):
         result = await agent.run(full_prompt)
         return result.text
     except Exception as e:
-        return f"❌ Error: {str(e)}"
+        return f"[ERROR] {str(e)}"
 
 async def interactive_chat():
     """Interactive chat loop with the UKEF agent."""
     # Configuration check
     if AGENT_ID == "asst_PASTE_YOUR_ID_HERE":
-        print("❌ ERROR: Please update AGENT_ID in the script")
+        print("[ERROR] Please update AGENT_ID in the script")
         print("   1. Go to Azure AI Foundry")
         print("   2. Open your agent")
         print("   3. Copy the agent ID (usually starts with 'asst_')")
@@ -48,11 +48,11 @@ async def interactive_chat():
             async with client.as_agent(agent_id=AGENT_ID) as agent:
                 # Welcome banner
                 print("\n" + "="*60)
-                print("🤖 UKEF Export Finance Policy Agent")
+                print("UKEF Export Finance Policy Agent")
                 print("="*60)
-                print("💼 Company: Kamil Changan Consultancy")
-                print("📊 Export History: 5% → 5% → 7% (meets 5% rule)")
-                print("🌍 Project: South Sudan Consultancy")
+                print("Company: Kamil Changan Consultancy")
+                print("Export History: 5% → 5% → 7% (meets 5% rule)")
+                print("Project: South Sudan Consultancy")
                 print("-"*60)
                 print("Commands:")
                 print("  'exit' or 'quit' - Exit the chat")
@@ -63,18 +63,18 @@ async def interactive_chat():
                 # Interactive loop
                 while True:
                     try:
-                        user_input = input("📝 Your question: ").strip()
+                        user_input = input("[INPUT] Your question: ").strip()
                         
                         if not user_input:
                             continue
                         
                         # Handle commands
                         if user_input.lower() in ['exit', 'quit']:
-                            print("\n👋 Goodbye!\n")
+                            print("\n[DONE] Session ended.\n")
                             break
                         
                         if user_input.lower() == 'help':
-                            print("\n💡 Example Questions:")
+                            print("\n[HELP] Example Questions:")
                             print("  • Is Kamil Changan eligible for UKEF?")
                             print("  • What is the 5% rule?")
                             print("  • Analyze South Sudan country risk")
@@ -83,25 +83,25 @@ async def interactive_chat():
                             continue
                         
                         if user_input.lower() == 'case':
-                            print("\n📋 Case Data:")
+                            print("\n[CASE] Case Data:")
                             print(case_data)
                             print()
                             continue
                         
                         # Ask the agent
-                        print("\n🔄 Processing...\n")
+                        print("\n[PROCESSING] Please wait...\n")
                         response = await ask_agent(agent, user_input)
-                        print("🤖 Agent:")
+                        print("[AGENT RESPONSE]:")
                         print("-" * 60)
                         print(response)
                         print("-" * 60 + "\n")
                     
                     except KeyboardInterrupt:
-                        print("\n\n👋 Chat ended (Ctrl+C)")
+                        print("\n\n[INTERRUPTED] Chat ended (Ctrl+C)")
                         break
     
     except Exception as e:
-        print(f"\n❌ ERROR: {str(e)}")
+        print(f"\n[FATAL ERROR] {str(e)}")
         print("\nTroubleshooting:")
         print("  1. Verify ENDPOINT is correct")
         print("  2. Verify MODEL_DEPLOYMENT_NAME is correct")
