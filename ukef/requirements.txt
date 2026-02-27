@@ -1,3 +1,9 @@
+# Core dependencies
 agent-framework>=1.0.0b260130
-azure-identity>=1.20.0
 openai>=2.0.1
+azure-identity>=1.20.0
+
+# Azure AI/ML packages (pinned for compatibility with agent-framework)
+azure-ai-projects==2.0.0b3
+azure-ai-inference>=1.0.0b9
+azure-monitor-opentelemetry>=1.1.0

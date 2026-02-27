@@ -1,10 +1,20 @@
 import asyncio
+import logging
 from agent_framework.azure import AzureAIClient
 from azure.identity.aio import DefaultAzureCredential
 
-AGENT_ID = "UKEF1:8"
-ENDPOINT = "https://phd-agent-ukef-resource.services.ai.azure.com/api/projects/phd_agent_ukef"
-MODEL_DEPLOYMENT_NAME = "gpt-4o-mini"
+import os
+
+# configuration pulled from environment for flexibility
+AGENT_ID = os.getenv("AGENT_ID", "UKEF1:8")
+# note: earlier examples used AZURE_AI_PROJECT_ENDPOINT; Azure AI Foundry
+# sometimes refers to this as AIPROJECT_ENDPOINT in docs – we support both.
+ENDPOINT = os.getenv("AZURE_AI_PROJECT_ENDPOINT") or os.getenv("AIPROJECT_ENDPOINT")
+MODEL_DEPLOYMENT_NAME = os.getenv("AZURE_AI_MODEL_DEPLOYMENT_NAME", "gpt-4o-mini")
+
+# sanity check if endpoint was not provided
+if not ENDPOINT:
+    raise RuntimeError("AZURE_AI_PROJECT_ENDPOINT (or AIPROJECT_ENDPOINT) must be set")
 
 # Case context - can be customized
 case_data = """Kamil Changan Consultancy
@@ -44,8 +54,16 @@ async def interactive_chat():
                 agent_name="UKEF-Agent",
                 credential=credential,
             )
+            # Enable debug logging locally so we can see telemetry/middleware logs.
+            logging.basicConfig(level=logging.DEBUG)
+
+            # Configure Azure Monitor to send telemetry to Application Insights
+            # (development only: enable_sensitive_data=True sends prompts/responses)
+            await client.configure_azure_monitor(enable_sensitive_data=True)
             
-            async with client.as_agent(agent_id=AGENT_ID) as agent:
+            # Use the correct keyword argument `id` so we refer to an existing agent
+            # e.g. "UKEF1:8" (name:version) shown in Azure AI Foundry.
+            async with client.as_agent(id=AGENT_ID) as agent:
                 # Welcome banner
                 print("\n" + "="*60)
                 print("UKEF Export Finance Policy Agent")
